@@ -30,9 +30,9 @@ public class CyclicBarrierDemo {
                 try {
                     Thread.sleep(randomNum);
                     System.out.println(Thread.currentThread().getName() + ", 通过了第"+i+"个障碍物, 使用了 "+((double)randomNum/1000)+"s");
-                    //this.cyclicBarrier.await();
+                    this.cyclicBarrier.await();
 
-                } catch (InterruptedException e) {
+                } catch (InterruptedException | BrokenBarrierException e) {
                     e.printStackTrace();
                 }
             }
