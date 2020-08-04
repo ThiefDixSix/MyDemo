@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cyc.security.config.CousomUser;
 import com.cyc.security.entity.SysPermission;
 import com.cyc.security.entity.SysRolePermissionRelation;
 import com.cyc.security.entity.SysUser;
@@ -66,6 +67,7 @@ public class SysUserController extends ApiController {
      */
     @GetMapping("/getUser")
     public R selectOne(@RequestParam("id") Long id) {
+        System.out.println(CousomUser.getUserDetails());
         // 查询用户对应的角色信息
         List<Integer> roleIdS = sysUserRoleRelationService.list(new LambdaQueryWrapper<SysUserRoleRelation>()
                 .eq(SysUserRoleRelation::getUserId, id))
