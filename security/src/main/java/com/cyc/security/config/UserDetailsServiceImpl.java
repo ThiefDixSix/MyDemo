@@ -66,6 +66,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             });
         }
 
-        return new User(sysUser.getUserName(),sysUser.getPassword(),sysUser.getEnabled().equals(1), sysUser.getNotExpired().equals(1), sysUser.getCredentialsNotExpired().equals(1), sysUser.getAccountNotLocked().equals(1), grantedAuthorities);
+        return new User(sysUser.getUserName(),sysUser.getPassword(),!sysUser.getEnabled().equals(1), !sysUser.getNotExpired().equals(1), !sysUser.getCredentialsNotExpired().equals(1), !sysUser.getAccountNotLocked().equals(1), grantedAuthorities);
     }
 }
