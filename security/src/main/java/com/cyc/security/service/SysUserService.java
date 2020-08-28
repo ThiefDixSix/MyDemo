@@ -2,6 +2,7 @@ package com.cyc.security.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cyc.security.entity.SysUser;
+import com.cyc.security.entity.vo.UserVO;
 
 /**
  * 用户表(SysUser)表服务接口
@@ -11,4 +12,5 @@ import com.cyc.security.entity.SysUser;
  */
 public interface SysUserService extends IService<SysUser> {
 
+    UserVO getUserInfo(String userName);
 }

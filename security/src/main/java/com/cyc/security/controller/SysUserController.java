@@ -125,4 +125,14 @@ public class SysUserController extends ApiController {
     public R delete(@RequestParam("idList") List<Long> idList) {
         return success(this.sysUserService.removeByIds(idList));
     }
+
+    /**
+     * 根据用户名查询用户所有的相关信息
+     * @param userName
+     * @return
+     */
+    @GetMapping("/getUserInfo/{userName}")
+    public R getUserInfo(@PathVariable String userName){
+        return success(this.sysUserService.getUserInfo(userName));
+    }
 }
