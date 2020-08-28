@@ -9,7 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SecurityApplication {
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+        System.out.println("-------------------------程序开始启动-------------------------");
         SpringApplication.run(SecurityApplication.class, args);
+        System.out.println("-------------------------程序启动成功，耗时："+(System.currentTimeMillis()-startTime)/1000+"s-------------------------");
+
     }
 
 }
